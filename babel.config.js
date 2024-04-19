@@ -14,10 +14,11 @@ module.exports = function (api) {
             ".android.js",
             ".android.tsx",
             ".ios.js",
-            ".ios.tsx"
-          ]
-        }
-      ]
-    ]
+            ".ios.tsx",
+          ],
+        },
+        "react-native-reanimated/plugin",
+      ],
+    ],
   };
 };

@@ -1,62 +1,87 @@
-import { Github, Loader2 } from "@tamagui/lucide-icons";
-import * as Linking from "expo-linking";
+import React from "react";
+import { SafeAreaView, TouchableOpacity } from "react-native";
+import { ScrollView, TextInput } from "react-native";
+import { Text, Image, View } from "react-native";
 import { router } from "expo-router";
-import * as WebBrowser from "expo-web-browser";
-import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
-import { Button } from "tamagui";
-
-import { createSessionFromUrl, performOAuth } from "./login.helpers";
 import { styles } from "./login.screen.styles";
 
-import EmailForm from "@/components/EmailForm";
-import { useAuthStore } from "@/stores/auth/auth.store";
-
-WebBrowser.maybeCompleteAuthSession(); // required for web only
-
-export default function Auth() {
-  const isAnonymous = useAuthStore(state => state.isAnonymous);
-  const setIsAnonymous = useAuthStore(state => state.setIsAnonymous);
-  const setUser = useAuthStore(state => state.setUser);
-
-  useEffect(() => {
-    if (!isAnonymous) {
-      alert("You are logged in, go back Gilaso");
-      setTimeout(() => {
-        router.replace("/");
-      }, 1000);
-    }
-  }, [isAnonymous]);
-
-  // Handle linking into app from email app.
-  const url = Linking.useURL();
-  if (url) createSessionFromUrl(url);
-  const [loading] = useState(false);
-
-  // to warm up the browser
-  useEffect(() => {
-    WebBrowser.warmUpAsync();
-    return () => {
-      WebBrowser.coolDownAsync();
-    };
-  }, []);
-
+const SignIn = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.headerTitle}>Login Screen</Text>
-      <View style={styles.content}>
-        <EmailForm />
-        <Button
-          style={[styles.githubButton, { opacity: 0.7 }]}
-          icon={loading ? Loader2 : Github}
-          onPress={() => performOAuth(setIsAnonymous, setUser)}
-          disabled={true}
-        >
-          <Text style={{ color: "#fff" }}>
-            {loading ? "loading" : "Sign in with GitHub"}
-          </Text>
-        </Button>
-      </View>
-    </View>
+    <>
+      <SafeAreaView style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
+          <View style={styles.contentContainer}>
+            <Text style={styles.title}>Hello Again!</Text>
+            <Text style={styles.body}>Welcome back you've been missed!</Text>
+
+            <TextInput
+              style={styles.input}
+              placeholder="Enter username"
+              autoCorrect={false}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Password"
+              autoCorrect={false}
+              secureTextEntry={true}
+            />
+
+            <TouchableOpacity>
+              <Text
+                style={[
+                  styles.buttonsText,
+                  { fontWeight: "bold", lineHeight: 30, textAlign: "right" },
+                ]}
+              >
+                Recovery Password
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.signInButton}>
+              <Text style={{ color: "white", fontWeight: "bold" }}>
+                Sign In
+              </Text>
+            </TouchableOpacity>
+
+            <Text style={{ textAlign: "center" }}>Or continue with</Text>
+
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity style={styles.button1}>
+                <Image
+                  source={{
+                    uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png",
+                  }}
+                  style={{ width: 40, height: 40 }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => router.navigate("Welcome")}
+                style={styles.button1}
+              >
+                <Image
+                  source={{
+                    uri: "https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png",
+                  }}
+                  style={{ width: 40, height: 40 }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => router.navigate("Welcome")}
+                style={styles.button1}
+              >
+                <Image
+                  source={{
+                    uri: "https://cdn-icons-png.flaticon.com/512/124/124010.png",
+                  }}
+                  style={{ width: 40, height: 40, borderRadius: 50 }}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </>
   );
-}
+};
+
+export default SignIn;
