@@ -12,7 +12,7 @@ const TermsAndConditionsScreen = () => {
           Aceptación de los Términos y Condiciones
         </Text>
         <Text style={styles.description}>
-          Al acceder o utilizar la aplicación Anefito Delta, aceptas y estás
+          Al acceder o utilizar la aplicación Gamma Quiz App, aceptas y estás
           sujeto a estos Términos y Condiciones de seguir siendo putito. Si no
           estás de acuerdo con alguno de los términos establecidos aquí, por
           favor, no utilices nuestra aplicación.
@@ -23,7 +23,7 @@ const TermsAndConditionsScreen = () => {
       <View style={styles.section}>
         <Text style={styles.title}>Uso de la Aplicación</Text>
         <Text style={styles.description}>
-          Anefito Delta está diseñada para ayudarte a controlar y administrar
+          Gamma Quiz App está diseñada para ayudarte a controlar y administrar
           tus gastos personales. Al utilizar nuestra aplicación, aceptas que
           eres el único responsable de cualquier información ingresada y
           cualquier acción realizada dentro de la misma.
@@ -35,7 +35,7 @@ const TermsAndConditionsScreen = () => {
         <Text style={styles.title}>Privacidad</Text>
         <Text style={styles.description}>
           Respetamos tu privacidad y nos comprometemos a protegerla. Toda la
-          información proporcionada a través de Anefito Delta se manejará de
+          información proporcionada a través de Gamma Quiz App se manejará de
           acuerdo con nuestra Política de Privacidad.
         </Text>
       </View>
@@ -69,19 +69,19 @@ const TermsAndConditionsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
   },
   section: {
-    marginBottom: 20
+    marginBottom: 20,
   },
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 5
+    marginBottom: 5,
   },
   description: {
-    fontSize: 16
-  }
+    fontSize: 16,
+  },
 });
 
 export default TermsAndConditionsScreen;

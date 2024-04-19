@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "anefito",
-    "slug": "anefito",
+    "name": "gamma-quiz-app",
+    "slug": "gamma-quiz-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
