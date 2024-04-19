@@ -6,7 +6,7 @@ import { vec } from "@shopify/react-native-skia";
 import React, { useRef } from "react";
 import {
   SafeAreaViewProps,
-  useSafeAreaInsets
+  useSafeAreaInsets,
 } from "react-native-safe-area-context";
 
 type Props = ViewProps & {
@@ -22,6 +22,7 @@ const BlurBox = ({
 }: React.PropsWithChildren<Props>): JSX.Element => {
   const edgeHeight = useRef(60).current;
   const insets = useSafeAreaInsets();
+  const end = vec(0, edgeHeight + insets.top);
 
   return (
     <View style={[styles.wrapper, props.style]}>

@@ -4,14 +4,15 @@ import { ScrollView, TextInput } from "react-native";
 import { Text, Image, View } from "react-native";
 import { router } from "expo-router";
 import { styles } from "./login.screen.styles";
+import BlurBox from "@/components/box/BlurBox/BlurBox";
 
 const SignIn = () => {
   return (
-    <>
+    <BlurBox style={styles.wrapper}>
       <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={styles.container}>
           <View style={styles.contentContainer}>
-            <Text style={styles.title}>Hello Again!</Text>
+            <Text style={styles.title}>Hello Again PAPI!</Text>
             <Text style={styles.body}>Welcome back you've been missed!</Text>
 
             <TextInput
@@ -49,7 +50,7 @@ const SignIn = () => {
               <TouchableOpacity style={styles.button1}>
                 <Image
                   source={{
-                    uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png",
+                    uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.png",
                   }}
                   style={{ width: 40, height: 40 }}
                 />
@@ -80,7 +81,7 @@ const SignIn = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </BlurBox>
   );
 };
 

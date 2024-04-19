@@ -7,7 +7,7 @@ import {
   withDelay,
   withRepeat,
   withSequence,
-  withTiming
+  withTiming,
 } from "react-native-reanimated";
 
 const BlurCircleColors = [
@@ -16,7 +16,7 @@ const BlurCircleColors = [
   "#FFF0DC",
   "lavender",
   "aliceblue",
-  "lightyellow"
+  "lightyellow",
 ];
 
 type Props = CircleProps & {
@@ -71,9 +71,16 @@ const BlurCircle = ({ delay = 0, ...props }: Props): JSX.Element => {
         -1
       )
     );
-  }, [props.r, delay]);
+  }, [
+    delay,
+    radius.value,
+    color.value,
+    colorAnimationDuration,
+    radiusAnimationSize,
+    props.r,
+  ]);
 
-  return <Circle {...props} r={radius} color={animatedColor} />;
+  return <Circle {...props} r={radius} color={animatedColor.value} />;
 };
 
 export default BlurCircle;

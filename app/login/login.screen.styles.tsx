@@ -8,6 +8,11 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "transparent",
   },
+  wrapper: {
+    backgroundColor: "#F4F4FD",
+    flex: 1,
+    // paddingHorizontal: 16,
+  },
   contentContainer: {
     paddingHorizontal: 30,
   },
