@@ -19,30 +19,30 @@ export default function TabLayout() {
         tabBarActiveTintColor: "#111827",
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true)
+        headerShown: useClientOnlyValue(false, true),
       }}
     >
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          headerShown: false,
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{
           headerShown: false,
           title: "Categories",
-          tabBarIcon: ({ color }) => <TabBarIcon name="bank" color={color} />
+          tabBarIcon: ({ color }) => <TabBarIcon name="bank" color={color} />,
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
           title: "Expenses",
-          tabBarIcon: ({ color }) => <TabBarIcon name="money" color={color} />
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          headerShown: false,
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />
+          tabBarIcon: ({ color }) => <TabBarIcon name="money" color={color} />,
         }}
       />
     </Tabs>

@@ -10,59 +10,40 @@ import CategoryResume from "@/components/categories/CategoryResume/CategoryResum
 import { useAuthStore } from "@/stores/auth/auth.store";
 
 export default function TabOneScreen() {
-  const isAnonymous = useAuthStore(state => state.isAnonymous);
-
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="black" />
-
-      {isAnonymous ? (
-        <>
-          <Button
-            onPress={() => {
-              router.navigate("/login");
-            }}
-            style={styles.buttonLogout}
-            icon={User}
-          >
-            <Text style={{ color: "#fff" }}>Go to Login</Text>
-          </Button>
-        </>
-      ) : (
-        <>
-          <UserInfo />
-          <Theme name="dark">
-            <Button
-              style={styles.button}
-              variant="outlined"
-              onPress={() => {
-                router.push("/categories");
-              }}
-              icon={<FontAwesome name="plus" size={25} color="#111827" />}
-            >
-              Add Category
-            </Button>
-          </Theme>
-          <CategoryResume />
-        </>
-      )}
+      <UserInfo />
+      <Theme name="dark">
+        <Button
+          style={styles.button}
+          variant="outlined"
+          onPress={() => {
+            router.push("/categories");
+          }}
+          icon={<FontAwesome name="plus" size={25} color="#111827" />}
+        >
+          Add Category
+        </Button>
+      </Theme>
+      <CategoryResume />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   button: {
     alignSelf: "center",
     width: "94%",
     color: "#111827",
-    borderColor: "#111827"
+    borderColor: "#111827",
   },
   buttonLogout: {
     backgroundColor: "#333",
@@ -70,6 +51,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 5,
     color: "#fff",
-    marginTop: 24
-  }
+    marginTop: 24,
+  },
 });
