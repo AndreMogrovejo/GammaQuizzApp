@@ -69,7 +69,7 @@ export const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 16,
     alignItems: "center",
-    marginVertical: 30,
+    marginTop: 16,
     shadowColor: "#FD6D6A",
     shadowOffset: {
       width: 0,
