@@ -21,7 +21,7 @@ const BlurBackground = (): JSX.Element => {
         <BlurCircle
           key={index}
           // Arrange elements in a checkerboard pattern
-          cx={index % 2 ? height : 0}
+          cx={index % 2 ? width : 0}
           cy={step * index}
           r={r}
           delay={index * 1000}

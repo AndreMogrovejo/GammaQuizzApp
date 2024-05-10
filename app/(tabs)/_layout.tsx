@@ -23,14 +23,6 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          headerShown: false,
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
-        }}
-      />
-      <Tabs.Screen
         name="index"
         options={{
           headerShown: false,
@@ -43,6 +35,14 @@ export default function TabLayout() {
         options={{
           title: "Expenses",
           tabBarIcon: ({ color }) => <TabBarIcon name="money" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          headerShown: false,
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
         }}
       />
     </Tabs>

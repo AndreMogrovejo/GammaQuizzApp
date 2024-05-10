@@ -22,7 +22,6 @@ const BlurBox = ({
 }: React.PropsWithChildren<Props>): JSX.Element => {
   const edgeHeight = useRef(60).current;
   const insets = useSafeAreaInsets();
-  const end = vec(0, edgeHeight + insets.top);
 
   return (
     <View style={[styles.wrapper, props.style]}>

@@ -5,16 +5,25 @@ export const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "transparent",
+    justifyContent: "flex-start",
   },
   wrapper: {
-    backgroundColor: "#F4F4FD",
-    flex: 1,
-    // paddingHorizontal: 16,
+    paddingHorizontal: 8,
+    paddingVertical: 32,
+    borderRadius: 16,
+    position: "relative",
+    overflow: "hidden",
+  },
+  background: {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    zIndex: -1,
   },
   contentContainer: {
-    paddingHorizontal: 30,
+    paddingHorizontal: 8,
   },
   title: {
     fontSize: 32,
@@ -54,9 +63,8 @@ export const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     width: "100%",
-
     backgroundColor: "#DFE3E630",
-    marginTop: 40,
+    marginTop: 20,
   },
   input: {
     backgroundColor: "#F7F7F7",

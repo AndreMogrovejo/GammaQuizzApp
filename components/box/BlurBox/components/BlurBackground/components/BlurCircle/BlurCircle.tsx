@@ -71,16 +71,9 @@ const BlurCircle = ({ delay = 0, ...props }: Props): JSX.Element => {
         -1
       )
     );
-  }, [
-    delay,
-    radius.value,
-    color.value,
-    colorAnimationDuration,
-    radiusAnimationSize,
-    props.r,
-  ]);
+  }, [props.r, delay]);
 
-  return <Circle {...props} r={radius} color={animatedColor.value} />;
+  return <Circle {...props} r={radius} color={animatedColor} />;
 };
 
 export default BlurCircle;

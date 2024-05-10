@@ -23,16 +23,13 @@ const BlurEdge: React.FC<Props> = ({
   style,
   ...props
 }: Props) => {
-  if (!enabled) {
-    return null;
-  }
-  const { colors, end, start } = props;
+  if (!enabled) return null;
   const { width } = Dimensions.get("window");
 
   return (
     <Canvas style={[style, { height }]}>
       <Rect x={0} y={0} width={width} height={height}>
-        <LinearGradient start={start} end={end} colors={colors} />
+        <LinearGradient {...props} />
       </Rect>
     </Canvas>
   );
