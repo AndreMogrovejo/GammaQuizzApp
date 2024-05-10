@@ -76,7 +76,7 @@ export const updateCategory = async (payload: UpdateCategoryPayload) => {
   const { id: userId } = data.session?.user ?? {};
   if (!userId) throw Error("No user id");
 
-  const partialCategory = { name, limit, user_id: userId };
+  const partialCategory = { name, limit };
 
   const response: PostgrestSingleResponse<Category> = await supabase
     .from("categories")
