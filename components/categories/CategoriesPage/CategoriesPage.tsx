@@ -15,7 +15,7 @@ import { Category } from "@/interfaces/categories.types";
 import { getCategoriesKey } from "@/services/finance.services.hooks";
 import { useFetchCategories } from "@/services/finance.services.hooks";
 
-const CategoriesPage: React.FC<Props> = props => {
+const CategoriesPage: React.FC<Props> = (props) => {
   const queryClient = useQueryClient();
   const { data: categories, isFetching } = useFetchCategories();
 
@@ -23,7 +23,7 @@ const CategoriesPage: React.FC<Props> = props => {
     queryClient.refetchQueries({ queryKey: getCategoriesKey() });
   };
 
-  const renderItem: ListRenderItem<Category> = list => {
+  const renderItem: ListRenderItem<Category> = (list) => {
     const { item: category } = list;
     return <CategoryItem category={category} />;
   };

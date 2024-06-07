@@ -116,7 +116,7 @@ const TabBarSkiaItem = ({
     <GestureDetector gesture={touch}>
       <View style={styles.container}>
         <Canvas style={styles.container}>
-          <Path path={path} color={"white"} />
+          <Path path={path} color={"#fff"} />
         </Canvas>
         <Animated.View style={[styles.item, animatedIconStyle]}>
           {icon && icon({ focused, color: "#FD6D6A", size: 24 })}
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     left: "50%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: "#F1F1F3",
     borderRadius: 16,
     padding: 8,
   },

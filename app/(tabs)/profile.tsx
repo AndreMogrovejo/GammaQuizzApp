@@ -12,10 +12,10 @@ import { useAuthStore } from "@/stores/auth/auth.store";
 
 export default function ProfileScreen() {
   const [loading, setLoading] = useState(false);
-  const setIsAnonymous = useAuthStore(state => state.setIsAnonymous);
-  const isAnonymous = useAuthStore(state => state.isAnonymous);
-  const setUser = useAuthStore(state => state.setUser);
-  const user = useAuthStore(state => state.user);
+  const setIsAnonymous = useAuthStore((state) => state.setIsAnonymous);
+  const isAnonymous = useAuthStore((state) => state.isAnonymous);
+  const setUser = useAuthStore((state) => state.setUser);
+  const user = useAuthStore((state) => state.user);
   const { email } = user ?? {};
   const name = email?.split("@")[0] ?? "";
   const uppercaseName = name?.charAt(0)?.toUpperCase() + name?.slice(1);
@@ -67,7 +67,7 @@ export default function ProfileScreen() {
           style={{
             color: "#007AFF",
             fontSize: 16,
-            textDecorationLine: "underline"
+            textDecorationLine: "underline",
           }}
         >
           Terms and conditions
@@ -112,38 +112,38 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     paddingTop: 64,
-    alignItems: "center"
+    alignItems: "center",
   },
   headerTitle: {
     fontSize: 24,
     fontWeight: "bold",
     marginTop: 20,
-    marginLeft: 20
+    marginLeft: 20,
   },
   image: {
     borderWidth: 4,
-    borderColor: "#111827"
+    borderColor: "#111827",
   },
   name: {
     marginBottom: 80,
-    color: "#333"
+    color: "#333",
   },
   content: {
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "center",
-    width: "100%"
+    width: "100%",
   },
   button: {
     backgroundColor: "#333",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
-    color: "#fff"
+    color: "#fff",
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: "80%"
-  }
+    width: "80%",
+  },
 });
