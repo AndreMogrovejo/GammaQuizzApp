@@ -21,7 +21,7 @@ export default function TabOneScreen() {
           onPress={() => {
             router.push("/categories");
           }}
-          icon={<FontAwesome name="plus" size={25} color="#111827" />}
+          icon={<FontAwesome name="plus" size={25} color="#FD6D6A" />}
         >
           Add Category
         </Button>
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
   button: {
     alignSelf: "center",
     width: "94%",
-    color: "#111827",
-    borderColor: "#111827",
+    color: "#FD6D6A",
+    borderColor: "#FD6D6A",
   },
   buttonLogout: {
     backgroundColor: "#333",

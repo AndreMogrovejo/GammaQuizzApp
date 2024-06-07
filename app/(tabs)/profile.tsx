@@ -87,7 +87,7 @@ export default function ProfileScreen() {
         <Avatar circular size="$10" style={styles.image}>
           <Avatar.Image
             accessibilityLabel="Cam"
-            src="https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80"
+            src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           />
           <Avatar.Fallback backgroundColor="$blue10" />
         </Avatar>
@@ -122,11 +122,11 @@ export const styles = StyleSheet.create({
   },
   image: {
     borderWidth: 4,
-    borderColor: "#111827",
+    borderColor: "#FD6D6A",
   },
   name: {
     marginBottom: 80,
-    color: "#333",
+    color: "#FD6D6A",
   },
   content: {
     flex: 1,
@@ -135,7 +135,7 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
   button: {
-    backgroundColor: "#333",
+    backgroundColor: "#FD6D6A",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,

@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Alert, SafeAreaView, TouchableOpacity } from "react-native";
-import { ScrollView, TextInput } from "react-native";
+import { TextInput } from "react-native";
 import { Text, Image, View } from "react-native";
 import { router } from "expo-router";
 import * as Linking from "expo-linking";
 
 import { styles } from "./login.screen.styles";
-import BlurBox from "@/components/box/BlurBox/BlurBox";
 import { useAuthStore } from "@/stores/auth/auth.store";
 import { createSessionFromUrl } from "./login.helpers";
 import { supabase } from "@/app/supabase";
 import Animated from "react-native-reanimated";
 import { BackdropBlur, Canvas, Fill } from "@shopify/react-native-skia";
 import BlurBackground from "../box/BlurBox/components/BlurBackground/BlurBackground";
-import Header from "../Header/Header";
 import { Button } from "tamagui";
 import { ChevronLeft } from "@tamagui/lucide-icons";
 
@@ -70,7 +68,6 @@ const SignIn = () => {
 
   useEffect(() => {
     if (!isAnonymous) {
-      alert("You are logged in");
       setTimeout(() => {
         router.replace("/");
       }, 1000);

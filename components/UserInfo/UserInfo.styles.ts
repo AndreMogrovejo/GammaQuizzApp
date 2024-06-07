@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#111827",
+    backgroundColor: "#FD6D6A",
     paddingTop: 64,
     paddingBottom: 24,
     paddingHorizontal: 24,
@@ -12,11 +12,14 @@ const styles = StyleSheet.create({
     gap: 16,
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24,
-    marginBottom: 12
+    marginBottom: 12,
   },
   name: {
-    maxWidth: "68%"
-  }
+    maxWidth: "68%",
+  },
+  greetings: {
+    flex: 1,
+  },
 });
 
 export default styles;
