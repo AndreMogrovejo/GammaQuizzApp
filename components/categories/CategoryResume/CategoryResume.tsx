@@ -12,7 +12,7 @@ import { Category } from "@/interfaces/categories.types";
 import { getCategoriesKey } from "@/services/finance.services.hooks";
 import { useFetchCategories } from "@/services/finance.services.hooks";
 
-const CategoryResume: React.FC<Props> = props => {
+const CategoryResume: React.FC<Props> = (props) => {
   const queryClient = useQueryClient();
   const { data: categories, isFetching } = useFetchCategories();
 
@@ -20,7 +20,7 @@ const CategoryResume: React.FC<Props> = props => {
     queryClient.refetchQueries({ queryKey: getCategoriesKey() });
   };
 
-  const renderItem: ListRenderItem<Category> = list => {
+  const renderItem: ListRenderItem<Category> = (list) => {
     const { item: category } = list;
     const { limit, name } = category;
     return (

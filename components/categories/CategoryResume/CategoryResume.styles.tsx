@@ -6,10 +6,10 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     margin: 12,
     borderRadius: 8,
-    padding: 12
+    padding: 12,
   },
   flatlist: {
-    maxHeight: "88%"
+    maxHeight: "88%",
   },
   categoryContainer: {
     backgroundColor: "white",
@@ -22,24 +22,24 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 8,
     borderBottomWidth: 1,
-    borderColor: "lightgrey"
+    borderColor: "lightgrey",
   },
   title: {
-    color: "#111827"
+    color: "#111827",
   },
   CategoryTitle: {
     color: "#111827",
-    marginBottom: 8
+    marginBottom: 8,
   },
   leftContainer: {
     flexDirection: "column",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   rightContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8
-  }
+    gap: 8,
+  },
 });
 
 export default styles;
