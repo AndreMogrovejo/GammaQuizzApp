@@ -7,7 +7,7 @@ import { Button, Text, Theme, View } from "tamagui";
 
 import UserInfo from "@/components/UserInfo/UserInfo";
 import CategoryResume from "@/components/categories/CategoryResume/CategoryResume";
-import { useAuthStore } from "@/stores/auth/auth.store";
+import RecentQuizCard from "@/components/home/RecentQuizCard/RecentQuizCard";
 
 export default function TabOneScreen() {
   return (
@@ -15,6 +15,9 @@ export default function TabOneScreen() {
       <StatusBar backgroundColor="black" />
       <UserInfo />
       <Theme name="dark">
+        <View style={styles.recentContainer}>
+          <RecentQuizCard />
+        </View>
         <Button
           style={styles.button}
           variant="outlined"
@@ -35,6 +38,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  recentContainer: {
+    padding: 16,
   },
   title: {
     fontSize: 20,
