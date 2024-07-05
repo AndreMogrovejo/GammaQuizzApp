@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { Eye, Edit3, Trash2 } from "@tamagui/lucide-icons";
 
 import styles from "./QuizItem.styles";
 import { QuizItemProps as Props } from "./QuizItem.types";
@@ -20,9 +21,12 @@ const QuizItem: React.FC<Props> = (props) => {
       </View>
 
       <View style={styles.right}>
-        <Button>Edit</Button>
+        <Theme name="green">
+          <Button icon={Eye} />
+        </Theme>
+        <Button icon={Edit3} />
         <Theme name="red">
-          <Button>Delete</Button>
+          <Button icon={Trash2} />
         </Theme>
       </View>
     </View>
