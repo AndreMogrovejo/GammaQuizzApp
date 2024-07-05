@@ -4,12 +4,12 @@ const tintColorDark = "#fff";
 export default {
   primary: "#FD6D6A",
   blurCircleColors: {
-    lightPurple: "#D6D9FA",
-    lightGreen: "#D6F9EE",
-    peach: "#FFF0DC",
-    lavender: "lavender",
-    aliceblue: "aliceblue",
-    lightyellow: "lightyellow",
+    lightPurple: "#E5C6FF",
+    lightGreen: "#D8EAA3",
+    peach: "#FFE5B4",
+    lavender: "#EBD6FF",
+    aliceblue: "#D6EFFF",
+    lightyellow: "#FFF5C2",
   },
   gray: {
     lightGray: "#6D5D6E",

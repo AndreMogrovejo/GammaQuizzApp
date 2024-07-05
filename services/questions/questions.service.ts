@@ -2,8 +2,9 @@
 
 import { supabase } from "@/app/supabase";
 import { PostgrestSingleResponse } from "@supabase/supabase-js";
+import { Question, Quizz, Answer } from "./questions.service.types";
 
-export const fetchQuizzes = async () => {
+export const fetchQuizzes = async (): Promise<Quizz[]> => {
   const response: PostgrestSingleResponse<any[]> = await supabase
     .from("quizzes")
     .select("*");
@@ -13,7 +14,7 @@ export const fetchQuizzes = async () => {
   return response.data;
 };
 
-export const fetchQuestions = async (quizId: number) => {
+export const fetchQuestions = async (quizId: number): Promise<Question[]> => {
   const response: PostgrestSingleResponse<any[]> = await supabase
     .from("questions")
     .select("*")
@@ -24,7 +25,7 @@ export const fetchQuestions = async (quizId: number) => {
   return response.data;
 };
 
-export const fetchAnswers = async (questionId: number) => {
+export const fetchAnswers = async (questionId: number): Promise<Answer[]> => {
   const response: PostgrestSingleResponse<any[]> = await supabase
     .from("answers")
     .select("*")
