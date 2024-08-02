@@ -18,16 +18,29 @@ export default function TabOneScreen() {
         <View style={styles.recentContainer}>
           <RecentQuizCard />
         </View>
-        <Button
-          style={styles.button}
-          variant="outlined"
-          onPress={() => {
-            router.push("/categories");
-          }}
-          icon={<FontAwesome name="plus" size={25} color="#FD6D6A" />}
-        >
-          Add Category
-        </Button>
+
+        <View style={styles.buttons}>
+          <Button
+            style={styles.button}
+            variant="outlined"
+            onPress={() => {
+              router.push("/categories");
+            }}
+            icon={<FontAwesome name="plus" size={25} color="#FD6D6A" />}
+          >
+            Add Category
+          </Button>
+          <Button
+            style={styles.button}
+            variant="outlined"
+            onPress={() => {
+              router.push("/quizzes");
+            }}
+            icon={<FontAwesome name="plus" size={25} color="#FD6D6A" />}
+          >
+            Add Quiz
+          </Button>
+        </View>
       </Theme>
       <CategoryResume />
     </View>
@@ -59,5 +72,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: "#fff",
     marginTop: 24,
+  },
+  buttons: {
+    gap: 16,
   },
 });
