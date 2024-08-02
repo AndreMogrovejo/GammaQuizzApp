@@ -14,6 +14,7 @@ import { useFetchCategories } from "@/services/finance.services.hooks";
 import { useFetchQuizzes } from "@/services/questions/questions.service.hooks";
 import { Quizz } from "@/services/questions/questions.service.types";
 import BlurBox from "@/components/BlurBox/BlurBox";
+import { router } from "expo-router";
 
 const CategoryResume: React.FC<Props> = (props) => {
   const queryClient = useQueryClient();
@@ -26,9 +27,14 @@ const CategoryResume: React.FC<Props> = (props) => {
 
   const renderCategoryItem: ListRenderItem<Category> = (list) => {
     const { item: category } = list;
-    const { name } = category;
+    const { name, id } = category;
     return (
-      <TouchableOpacity style={styles.categoryContent}>
+      <TouchableOpacity
+        style={styles.categoryContent}
+        onPress={() => {
+          router.push(`/category/${id}`);
+        }}
+      >
         <BlurBox customStyle={styles.categoryContainer}>
           <View style={styles.leftContainer}>
             <H5 style={styles.title}>{name}</H5>
@@ -40,11 +46,16 @@ const CategoryResume: React.FC<Props> = (props) => {
   };
 
   const renderQuizzItem: ListRenderItem<Quizz> = (list) => {
-    const { item: category } = list;
-    const { title, active } = category;
+    const { item: quizz } = list;
+    const { title, active, id } = quizz;
     if (!active) return <></>;
     return (
-      <TouchableOpacity style={styles.categoryContent}>
+      <TouchableOpacity
+        style={styles.categoryContent}
+        onPress={() => {
+          router.push(`/quizz/${id}`);
+        }}
+      >
         <BlurBox customStyle={styles.categoryContainer}>
           <View style={styles.leftContainer}>
             <H5 style={styles.title}>{title}</H5>

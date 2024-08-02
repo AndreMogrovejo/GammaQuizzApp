@@ -11,7 +11,7 @@ import { ProvidersProps as Props } from "./Providers.types";
 import { useColorScheme } from "@/components/useColorScheme.web";
 import { getQueryClient } from "@/config/reactQuery.config";
 
-const Providers: React.FC<Props> = props => {
+const Providers: React.FC<Props> = (props) => {
   const { children } = props;
   const colorScheme = useColorScheme();
   const tConfig = createTamagui(config);
